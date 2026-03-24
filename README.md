@@ -2,7 +2,7 @@
 Веб-приложение для создания и управления персонажами для игр с механикой типа Dungeons &amp; Dragons
 
 ```mermaid
-graph BT
+graph TB
     subgraph Клиент
         A(Браузер)
     end
