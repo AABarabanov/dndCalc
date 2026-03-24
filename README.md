@@ -27,6 +27,6 @@ C -->|результат| B
 B -->|HTML страница| A
 
 style A fill:stroke:#d97706,stroke-width:2px,r:50
-style B fill:#3b82f6,stroke:#1e40af,stroke-width:2px
-style C fill:#10b981,stroke:#047857,stroke-width:2px
-style D fill:#fbbf24,stroke:#374151,stroke-width:3px
+style B fill:#3b82f6,stroke:#1e40af,stroke-width:2px,color:#000
+style C fill:#10b981,stroke:#047857,stroke-width:2px,color:#000
+style D fill:#fbbf24,stroke:#374151,stroke-width:3px,color:#000
