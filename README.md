@@ -1,8 +1,9 @@
 # dndCalc
 
-<!--![Status](https://img.shields.io/badge/status-architecture-purple)-->
-![Status](https://img.shields.io/badge/status-planning-orange) <!--  ![Status](https://img.shields.io/badge/status-in%20development-blue)  ![Status](https://img.shields.io/badge/status-active_development-orange)  -->
-![Progress](https://img.shields.io/badge/progress-2%25-red)
+<!--  ![Status](https://img.shields.io/badge/status-architecture-purple)  -->
+<!--  ![Status](https://img.shields.io/badge/status-planning-orange)  -->   
+![Status](https://img.shields.io/badge/status-in%20development-blue)  <!--  ![Status](https://img.shields.io/badge/status-active_development-orange)  -->
+![Progress](https://img.shields.io/badge/progress-50%25-yellow)
 
 <!--  ![Status](https://img.shields.io/badge/version-alpha-red)
 ![Status](https://img.shields.io/badge/version-beta-orange)
@@ -14,8 +15,33 @@
 
 Веб-приложение для создания и управления персонажами для игр с механикой типа Dungeons &amp; Dragons
 ___
-![Java](https://img.shields.io/badge/Java-red?style=flat-square&logo=openjdk)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-green?style=flat-square&logo=spring)
+![Java](https://img.shields.io/badge/Java-17-red?style=flat-square&logo=openjdk)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-4-green?style=flat-square&logo=spring)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-1A1A1A?style=flat-square&logo=postgresql)
+![Docker](https://img.shields.io/badge/Docker-0A66C2?style=flat-square&logo=docker)
+![Docker Compose](https://img.shields.io/badge/Docker_Compose-7B2EDA?style=flat-square&logo=docker)
+
+### Основной функционал
+
+- Создание и управление персонажами D&D
+- Распределение характеристик
+- Сохранение персонажей в базе данных
+- Управление инвентарем и экипировкой
+
+<!--
+### Технологии
+- **Backend**: Java 17, Spring Boot 4
+- **Database**: PostgreSQL
+- **Build**: Maven
+- **Deployment**: Docker, Docker Compose  -->
+
+<!--### Запуск
+```bash
+# Поднять всё вместе
+docker-compose up -d
+# Приложение будет доступно на http://localhost:8080
+# PostgreSQL будет доступен на localhost:5432
+```  -->
 
 ```mermaid
 graph TB
