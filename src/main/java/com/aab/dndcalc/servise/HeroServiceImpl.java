@@ -22,7 +22,7 @@ public class HeroServiceImpl implements HeroService {
     }
 
     @Override
-    public Hero pullHeroById(Long id, Hero heroFromRequest) {
+    public Hero putHeroById(Long id, Hero heroFromRequest) {
         return repository.save(heroFromRequest);
     }
 
