@@ -2,8 +2,9 @@
 
 <!--  ![Status](https://img.shields.io/badge/status-architecture-purple)  -->
 <!--  ![Status](https://img.shields.io/badge/status-planning-orange)  -->   
-![Status](https://img.shields.io/badge/status-in%20development-blue)  <!--  ![Status](https://img.shields.io/badge/status-active_development-orange)  -->
-![Progress](https://img.shields.io/badge/progress-50%25-yellow)
+<!--  ![Status](https://img.shields.io/badge/status-in%20development-blue)  -->  
+![Status](https://img.shields.io/badge/status-active_development-orange)
+![Progress](https://img.shields.io/badge/progress-66%25-green)
 
 <!--  ![Status](https://img.shields.io/badge/version-alpha-red)
 ![Status](https://img.shields.io/badge/version-beta-orange)
@@ -15,11 +16,11 @@
 
 Веб-приложение для создания и управления персонажами для игр с механикой типа Dungeons &amp; Dragons
 ___
-![Java](https://img.shields.io/badge/Java-17-red?style=flat-square&logo=openjdk)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-4-green?style=flat-square&logo=spring)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-1A1A1A?style=flat-square&logo=postgresql)
-![Docker](https://img.shields.io/badge/Docker-0A66C2?style=flat-square&logo=docker)
-![Docker Compose](https://img.shields.io/badge/Docker_Compose-7B2EDA?style=flat-square&logo=docker)
+![Java](https://img.shields.io/badge/Java-17-red?style=plastic&logo=openjdk)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-4-green?style=plastic&logo=spring)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-1A1A1A?style=plastic&logo=postgresql)
+![Docker](https://img.shields.io/badge/Docker-0A66C2?style=plastic&logo=docker)
+![Docker Compose](https://img.shields.io/badge/Docker_Compose-7B2EDA?style=plastic&logo=docker)
 
 ### Основной функционал
 
