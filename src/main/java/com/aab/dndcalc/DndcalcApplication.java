@@ -1,5 +1,6 @@
 package com.aab.dndcalc;
 
+import com.aab.dndcalc.utils.Greetings;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,6 +9,8 @@ public class DndcalcApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DndcalcApplication.class, args);
+		Greetings.printGreetings();
+
 	}
 
 }
