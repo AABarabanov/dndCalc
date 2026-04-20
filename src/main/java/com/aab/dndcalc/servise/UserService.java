@@ -9,4 +9,8 @@ public interface UserService {
     User pullUserById(Long id, User userFromRequest);
     void deleteUserById(Long id);
 
+    User registerUser(String username, String password);
+    User findUserByUsername(String username);
+    boolean checkIfUsernameExists(String username);
+
 }
