@@ -1,8 +1,6 @@
 package com.aab.dndcalc.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,10 +15,15 @@ public class Hero {
 
     private String name;
     private String race;
+    private String heroClass;
     private int level;
     private int defenceClass;
     private int attackCheck;
     private int damageByHero;
     private int loadCapacity;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }
