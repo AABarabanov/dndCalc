@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="userMenu">
+  <div class="d-flex justify-content-end align-items-center mb-3">
+    <span class="text-white me-3">Привет, <strong th:text="${username}">User</strong>!</span>
+    <form method="post" th:action="@{/logout}" class="d-inline">
+      <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+      <button type="submit" class="btn btn-outline-danger btn-sm">
+        🚪 Выйти
+      </button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

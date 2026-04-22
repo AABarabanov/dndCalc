@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${hero.name} + ' — dndCalc'">Герой — dndCalc</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+      body {
+          background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+          min-height: 100vh;
+      }
+
+      .hero-card {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 20px;
+      }
+
+      .stat-box {
+          background: rgba(0, 0, 0, 0.3);
+          border-radius: 10px;
+          padding: 10px;
+          text-align: center;
+      }
+
+      .stat-value {
+          font-size: 2rem;
+          font-weight: bold;
+          color: #ffd200;
+      }
+
+      .stat-label {
+          font-size: 0.8rem;
+          color: #aaa;
+      }
+
+  </style>
+</head>
+<body>
+
+<div class="container py-4">
+
+  <!-- Кнопка назад -->
+  <div class="mb-3">
+    <a href="/heroes" class="btn btn-outline-light">← Назад к списку</a>
+  </div>
+
+  <!-- Карточка героя -->
+  <div class="hero-card p-4">
+
+    <!-- Заголовок с именем -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="text-white" th:text="${hero.name}">Имя героя</h1>
+      <div>
+        <a th:href="@{/heroes/{id}/edit(id=${hero.id})}" class="btn btn-warning me-2">
+          ✏️ Редактировать
+        </a>
+        <form method="post" th:action="@{/heroes/{id}/delete(id=${hero.id})}" class="d-inline">
+          <button type="submit" class="btn btn-danger" onclick="return confirm('Удалить героя?')">
+            🗑️ Удалить
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Основная информация -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="stat-box">
+          <div class="stat-label">РАСА</div>
+          <div class="stat-value fs-3" th:text="${hero.race}">-</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="stat-box">
+          <div class="stat-label">КЛАСС</div>
+          <div class="stat-value fs-3" th:text="${hero.heroClass}">-</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Характеристики (4 колонки) -->
+    <div class="row g-3 mb-4">
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="stat-label">УРОВЕНЬ</div>
+          <div class="stat-value" th:text="${hero.level}">1</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="stat-label">КЛАСС ЗАЩИТЫ</div>
+          <div class="stat-value" th:text="${hero.defenceClass}">10</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="stat-label">ПРОВЕРКА АТАКИ</div>
+          <div class="stat-value">+<span th:text="${hero.attackCheck}">0</span></div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="stat-label">ГРУЗОПОДЪЕМНОСТЬ</div>
+          <div class="stat-value" th:text="${hero.loadCapacity}">0</div>
+          <span class="stat-label">кг</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Урон -->
+    <div class="row">
+      <div class="col-12">
+        <div class="stat-box">
+          <div class="stat-label">УРОН</div>
+          <div class="stat-value fs-3" th:text="${hero.damageByHero}">1d6</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TODO дата создания -->
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>dndCalc — Создай своего героя</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+      body {
+          background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+          min-height: 100vh;
+          color: #eee;
+      }
+
+      .hero-section {
+          text-align: center;
+          padding: 100px 0;
+          /*background: url('https://avatars.mds.yandex.net/i?id=c13b1263bfb7b730039341acca54e5c3_l-5244093-images-thumbs&n=13') center/cover no-repeat;*/
+          background: url('https://avatars.mds.yandex.net/i?id=040549c08841e5475802859ded9d4427_l-4032649-images-thumbs&n=13') center/cover no-repeat;
+
+          position: relative;
+          border-radius: 0 0 30px 30px;
+      }
+
+      .hero-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.6);
+          border-radius: 0 0 30px 30px;
+      }
+
+      .hero-section > * {
+          position: relative;
+          z-index: 1;
+      }
+
+      .dice-icon {
+          font-size: 4rem;
+          filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+      }
+
+      /* Для карточек (пока оставить) */
+      /*.feature-card {*/
+      /*    background: rgba(255, 255, 255, 0.1);*/
+      /*    backdrop-filter: blur(10px);*/
+      /*    border: 1px solid rgba(255, 255, 255, 0.2);*/
+      /*    transition: transform 0.3s, box-shadow 0.3s;*/
+      /*}*/
+
+      /*.feature-card:hover {*/
+      /*    transform: translateY(-10px);*/
+      /*    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);*/
+      /*}*/
+
+      .btn-custom {
+          background: linear-gradient(45deg, #f7971e, #ffd200);
+          border: none;
+          color: #1a1a2e;
+          font-weight: bold;
+          padding: 12px 30px;
+          border-radius: 50px;
+          transition: transform 0.2s;
+      }
+
+      .btn-custom:hover {
+          transform: scale(1.05);
+          color: #1a1a2e;
+      }
+
+      .btn-outline-custom {
+          border: 2px solid #ffd200;
+          color: #ffd200;
+          border-radius: 50px;
+          padding: 10px 25px;
+          transition: all 0.3s;
+      }
+
+      .btn-outline-custom:hover {
+          background: #ffd200;
+          color: #1a1a2e;
+      }
+
+      .footer {
+          background: rgba(0, 0, 0, 0.5);
+          margin-top: 50px;
+          padding: 30px 0;
+          text-align: center;
+      }
+  </style>
+</head>
+<body>
+
+<!-- Главный блок -->
+<div class="hero-section">
+  <div class="container">
+    <div class="dice-icon">🎲</div>
+    <h1 class="display-1 fw-bold mt-3">dndCalc</h1>
+    <p class="lead fs-3">Создай своего идеального персонажа для Dungeons & Dragons</p>
+    <div class="mt-4">
+      <a th:href="@{/heroes}" class="btn btn-custom btn-lg me-3">
+        ⚔️ Мои герои
+      </a>
+      <a th:href="@{/heroes/new}" class="btn btn-outline-custom btn-lg">
+        🎲 Создать героя
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Карточки -->
+<!--<div class="container my-5">-->
+<!--  <div class="row g-4">-->
+<!--    <div class="col-md-4">-->
+<!--      <div class="card feature-card h-100 text-center p-4">-->
+<!--        <div class="card-body">-->
+<!--          <div class="display-1">🎲</div>-->
+<!--          <h3 class="card-title mt-3">Карточка №1</h3>-->
+<!--          <p class="card-text">Пока не знаю что сюда написать</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-md-4">-->
+<!--      <div class="card feature-card h-100 text-center p-4">-->
+<!--        <div class="card-body">-->
+<!--          <div class="display-1">📜</div>-->
+<!--          <h3 class="card-title mt-3">Управление</h3>-->
+<!--          <p class="card-text">Создавай, редактируй и удаляй своих персонажей.</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-md-4">-->
+<!--      <div class="card feature-card h-100 text-center p-4">-->
+<!--        <div class="card-body">-->
+<!--          <div class="display-1">🔐</div>-->
+<!--          <h3 class="card-title mt-3">Безопасно</h3>-->
+<!--          <p class="card-text">Пока заглушка, мож потом что придумаю (Здесь могла быть ваша реклама =))))</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!-- Как это работает -->
+<div class="container my-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h2 class="display-6">Как это работает?</h2>
+      <ol class="list-unstyled mt-4">
+        <li class="mb-3">📝 <strong>1. Регистрация</strong> — создай аккаунт за 1 минуту</li>
+        <li class="mb-3">🎲 <strong>2. Создание героя</strong> — выбери расу, класс, распредели характеристики</li>
+        <li class="mb-3">⚔️ <strong>3. Играй!</strong> — используй персонажа в своих приключениях</li>
+      </ol>
+      <a th:href="@{/register}" class="btn btn-outline-custom mt-3">Начать приключение →</a>
+    </div>
+    <div class="col-md-6 text-center">
+      <div class="display-1">🐉</div>
+      <p class="text-muted mt-3">"Приключение начинается здесь"</p>
+    </div>
+  </div>
+</div>
+
+<!-- Футер -->
+<footer class="footer">
+  <div class="container">
+    <p>dndCalc — неофициальный фанатский инструмент для Dungeons & Dragons</p>
+    <p class="small text-muted">
+      © 2026 dndCalc. Не аффилировано с Wizards of the Coast.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
