@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Создание героя</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+  <h1>🆕 Создание нового героя</h1>
+
+  <form th:action="@{/heroes/new}" th:object="${hero}" method="post" class="mt-4">
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Имя героя *</label>
+      <input type="text" class="form-control" id="name" th:field="*{name}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="race" class="form-label">Раса</label>
+      <input type="text" class="form-control" id="race" th:field="*{race}">
+    </div>
+
+    <div class="mb-3">
+      <label for="heroClass" class="form-label">Класс</label>
+      <input type="text" class="form-control" id="heroClass" th:field="*{heroClass}">
+    </div>
+
+    <div class="mb-3">
+      <label for="level" class="form-label">Уровень</label>
+      <input type="number" class="form-control" id="level" th:field="*{level}">
+    </div>
+
+    <div class="mb-3">
+      <label for="defenceClass" class="form-label">Класс защиты (КЗ)</label>
+      <input type="number" class="form-control" id="defenceClass" th:field="*{defenceClass}">
+    </div>
+
+    <div class="mb-3">
+      <label for="attackCheck" class="form-label">Проверка атаки</label>
+      <input type="number" class="form-control" id="attackCheck" th:field="*{attackCheck}">
+    </div>
+
+    <div class="mb-3">
+      <label for="damageByHero" class="form-label">Урон</label>
+      <input type="text" class="form-control" id="damageByHero" th:field="*{damageByHero}">
+    </div>
+
+    <div class="mb-3">
+      <label for="loadCapacity" class="form-label">Грузоподъемность (кг)</label>
+      <input type="number" class="form-control" id="loadCapacity" th:field="*{loadCapacity}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">💾 Сохранить</button>
+    <a href="/heroes" class="btn btn-secondary">Отмена</a>
+  </form>
+</div>
+</body>
+</html>

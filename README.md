@@ -3,11 +3,11 @@
 <!--  ![Status](https://img.shields.io/badge/status-architecture-purple)  -->
 <!--  ![Status](https://img.shields.io/badge/status-planning-orange)  -->   
 <!--  ![Status](https://img.shields.io/badge/status-in%20development-blue)  -->  
-![Status](https://img.shields.io/badge/status-active_development-orange)
-![Progress](https://img.shields.io/badge/progress-66%25-green)
+<!-- ![Status](https://img.shields.io/badge/status-active_development-orange) -->
+<!-- ![Progress](https://img.shields.io/badge/progress-66%25-green) -->
 
-<!--  ![Status](https://img.shields.io/badge/version-alpha-red)
-![Status](https://img.shields.io/badge/version-beta-orange)
+  ![Status](https://img.shields.io/badge/version-alpha-red)
+<!-- ![Status](https://img.shields.io/badge/version-beta-orange)
 ![Status](https://img.shields.io/badge/version-stable-brightgreen)
 ![Status](https://img.shields.io/badge/status-paused-lightgrey)
 ![Status](https://img.shields.io/badge/status-archived-darkgrey)  -->
@@ -28,6 +28,20 @@ ___
 - Распределение характеристик
 - Сохранение персонажей в базе данных
 - Управление инвентарем и экипировкой
+
+### 🚀 Быстрый старт (локальный запуск)
+
+Для запуска требуется **Docker**.
+
+```bash
+git clone https://github.com/AABarabanov/dndCalc
+cd dndСalc
+docker compose up
+https://github.com/AABarabanov/dndCalc
+```
+👉 http://localhost:8080
+
+---
 
 <!--
 ### Технологии

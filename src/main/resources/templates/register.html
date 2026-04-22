@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Регистрация — dndCalc</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+      body {
+          background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+      }
+
+      .register-card {
+          background: rgba(255, 255, 255, 0.95);
+          border-radius: 20px;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          overflow: hidden;
+      }
+
+      .register-header {
+          background: linear-gradient(45deg, #f7971e, #ffd200);
+          padding: 20px;
+          text-align: center;
+          color: #1a1a2e;
+      }
+
+      .register-body {
+          padding: 30px;
+      }
+
+      .btn-register {
+          background: linear-gradient(45deg, #f7971e, #ffd200);
+          border: none;
+          font-weight: bold;
+          padding: 12px;
+          border-radius: 50px;
+          width: 100%;
+      }
+
+      .btn-register:hover {
+          transform: scale(1.02);
+      }
+
+      .dice-icon {
+          font-size: 3rem;
+      }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="register-card">
+        <div class="register-header">
+          <div class="dice-icon">🎲</div>
+          <h2 class="mb-0">dndCalc</h2>
+          <p class="mb-0">Создай аккаунт</p>
+        </div>
+        <div class="register-body">
+
+          <div th:if="${error}" class="alert alert-danger" role="alert">
+            <span th:text="${error}"></span>
+          </div>
+
+          <div th:if="${success}" class="alert alert-success" role="alert">
+            Регистрация успешна! Теперь вы можете <a href="/login">войти</a>.
+          </div>
+
+          <!-- Форма регистрации -->
+          <form method="post" action="/register" th:action="@{/register}">
+            <div class="mb-3">
+              <label for="username" class="form-label">Имя пользователя</label>
+              <input type="text" class="form-control" id="username" name="username"
+                     required autofocus placeholder="Введите имя">
+              <small class="text-muted">Только латиница, цифры и _</small>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Пароль</label>
+              <input type="password" class="form-control" id="password" name="password"
+                     required placeholder="Минимум 4 символа">
+            </div>
+
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Подтвердите пароль</label>
+              <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                     required>
+            </div>
+
+            <button type="submit" class="btn btn-register mt-2">
+              🔐 Зарегистрироваться
+            </button>
+          </form>
+
+          <hr class="my-4">
+
+          <p class="text-center mb-0">
+            Уже есть аккаунт? <a href="/login" class="text-decoration-none">Войти →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
