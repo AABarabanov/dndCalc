@@ -22,6 +22,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: dndcalc-core:0.1.0-alpha
     container_name: dndcalc_core
     ports:
       - "8080:8080"
