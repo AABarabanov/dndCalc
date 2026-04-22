@@ -6,13 +6,12 @@
 <!-- ![Status](https://img.shields.io/badge/status-active_development-orange) -->
 <!-- ![Progress](https://img.shields.io/badge/progress-66%25-green) -->
 
-  ![Status](https://img.shields.io/badge/version-alpha-red)
+![Status](https://img.shields.io/badge/version-alpha-red)
+![1.0.0](https://img.shields.io/badge/-0.1.0-white)
 <!-- ![Status](https://img.shields.io/badge/version-beta-orange)
 ![Status](https://img.shields.io/badge/version-stable-brightgreen)
 ![Status](https://img.shields.io/badge/status-paused-lightgrey)
 ![Status](https://img.shields.io/badge/status-archived-darkgrey)  -->
-
-
 
 Веб-приложение для создания и управления персонажами для игр с механикой типа Dungeons &amp; Dragons
 ___
@@ -37,7 +36,6 @@ ___
 git clone https://github.com/AABarabanov/dndCalc
 cd dndСalc
 docker compose up
-https://github.com/AABarabanov/dndCalc
 ```
 👉 http://localhost:8080
 
