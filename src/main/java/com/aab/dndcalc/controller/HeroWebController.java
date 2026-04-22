@@ -44,7 +44,6 @@ public class HeroWebController {
     }
 
     @GetMapping("/{id}")
-
     public String viewHero(@PathVariable Long id,
                            Model model,
                            @AuthenticationPrincipal User currentUser) {
@@ -53,9 +52,38 @@ public class HeroWebController {
         return "hero-detail";
     }
 
-    @PostMapping("/{id}/delete")
-    public String deleteHero(@PathVariable Long id,
+
+    @GetMapping("/{id}/edit")
+    public String editHero(@PathVariable Long id,
+                           Model model,
+                           @AuthenticationPrincipal User currentUser) {
+        Hero hero = heroService.getHeroByIdAndUser(id, currentUser);
+        model.addAttribute("hero", hero);
+        return "hero-edit";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String updateHero(@PathVariable Long id,
+                             @ModelAttribute Hero hero,
                              @AuthenticationPrincipal User currentUser) {
+        Hero existingHero = heroService.getHeroByIdAndUser(id, currentUser);
+
+        existingHero.setName(hero.getName());
+        existingHero.setRace(hero.getRace());
+        existingHero.setHeroClass(hero.getHeroClass());
+        existingHero.setLevel(hero.getLevel());
+        existingHero.setDefenceClass(hero.getDefenceClass());
+        existingHero.setAttackCheck(hero.getAttackCheck());
+        existingHero.setDamageByHero(hero.getDamageByHero());
+        existingHero.setLoadCapacity(hero.getLoadCapacity());
+
+        heroService.addHero(existingHero);
+
+        return "redirect:/heroes/" + id;
+    }
+
+    @PostMapping("/{id}/delete")
+    public String deleteHero(@PathVariable Long id) {
         heroService.deleteHero(id);
         return "redirect:/heroes";
     }
